@@ -169,3 +169,29 @@ The password is always "notasecret"
         if(err) throw err;
         console.log(res);
     });
+
+#### Output
+
+    { kind: 'analytics#gaData',
+      id: 'https://www.googleapis.com/analytics/v3/data/ga?ids=ga:*******&metrics=ga:users&start-date=2014-10-21&end-date=2014-11-21',
+      query: 
+       { 'start-date': '2014-10-21',
+         'end-date': '2014-11-21',
+         ids: 'ga:93873080',
+         metrics: [ 'ga:users' ],
+         'start-index': 1,
+         'max-results': 1000 },
+      itemsPerPage: 1000,
+      totalResults: 1,
+      selfLink: 'https://www.googleapis.com/analytics/v3/data/ga?ids=ga:******&metrics=ga:users&start-date=2014-10-21&end-date=2014-11-21',
+      profileInfo: 
+       { profileId: '*****',
+         accountId: '****',
+         webPropertyId: 'UA-******-*',
+         internalWebPropertyId: '90277455',
+         profileName: 'All Web Site Data',
+         tableId: 'ga:93873080' },
+      containsSampledData: false,
+      columnHeaders: [ { name: 'ga:users', columnType: 'METRIC', dataType: 'INTEGER' } ],
+      totalsForAllResults: { 'ga:users': '33' },
+      rows: [ [ '33' ] ] }
