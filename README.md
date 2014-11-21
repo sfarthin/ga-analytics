@@ -3,7 +3,7 @@ ga-analytics
 
 Direct access to your Google Analytics reports on the [command-line](https://github.com/sfarthin/ga-analytics#command-line) and within  [node](https://github.com/sfarthin/ga-analytics#node-module).
 
-To use the module you will need a Google Service Account (and connected to Google Analytics) with these pieces of information.
+To use the module you will need a Google Service Account connected to Google Analytics. You will need these pieces of information:
 
 - [Google Client id](https://console.developers.google.com/) ([screenshot](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/service-account.jpg))
 - [Google Services Email](https://console.developers.google.com/) ([screenshot](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/service-account.jpg))
@@ -30,7 +30,7 @@ This module requires a Google Service Account connected to your GA account.
 
 ### Creating a Service Account
 
-1. Visit the Google Developer Console
+1. Visit the [Google Developer Console](https://console.developers.google.com/)
 2. Click APIs and enabled Analytics API
 2. Click credentials
 3. Create new client ID
@@ -46,7 +46,7 @@ The password is always "notasecret"
 
 ### Authorize your service account for Google Analytics
 
-1. Access Google Analytics and click Admin
+1. Access [Google Analytics](https://www.google.com/analytics/) and click Admin
 2. Click on "User Management", [add your google service email with read permissions](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/analytics.png)
 
 ## Command-Line
