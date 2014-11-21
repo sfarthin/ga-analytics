@@ -1,0 +1,30 @@
+{
+  "name": "ga-analytics",
+  "version": "0.0.1",
+  "description": "Straight forward access to Google Analytics stats",
+  "main": "index.js",
+  "bin": {
+    "ga-analytics": "bin/ga-analytics"
+  },
+  "scripts": {
+    "test": "./module.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Google Analytics",
+    "google",
+    "analytics",
+    "commandline"
+  ],
+  "author": {
+    "name": "Steve Farthing",
+    "email": "me@stevefar.com",
+    "url": "https://stevefar.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.5.0",
+    "lodash": "^2.4.1",
+    "moment": "^2.8.4"
+  }
+}
