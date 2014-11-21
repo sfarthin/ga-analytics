@@ -1,7 +1,7 @@
 {
   "name": "ga-analytics",
-  "version": "0.0.5",
-  "description": "Straight forward access to Google Analytics stats",
+  "version": "0.0.6",
+  "description": "Access Google Analytics reports via the command-line or node module",
   "main": "module.js",
   "bin": {
     "ga-analytics": "bin/ga-analytics"

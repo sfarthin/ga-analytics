@@ -35,14 +35,15 @@ program
 					'    ├────────────────────────────┼─────────────────────────────────────────┼─────────────────┼────────────────────┤\n'+
 					'    │ /internal-page/            │ My internal Page                        │ 12              │ 1                  │\n'+
 					'    └────────────────────────────┴─────────────────────────────────────────┴─────────────────┴────────────────────┘'+
-					'\n    Total users: 47\n    Total sessions: 61\n');
+					'\n    Total users: 47\n    Total sessions: 61');
+		console.log("\n    See https://github.com/sfarthin/ga-analytics for more examples.\n")
 	})	
 	.parse(process.argv)
 
 gaAnalytics(program, function(err, res) {
 	if(err) {
-		console.log("\n\n  "+err.message+"\n");
-		program.outputHelp();
+		console.log("\n  "+err.message);
+		console.log("\n  More Help: ga-analytics --help\n")
 		return;
 	}
 	
@@ -60,9 +61,7 @@ gaAnalytics(program, function(err, res) {
 			table.push(row);
 		});
 		
-		
 		console.log(table.toString() + "\n");
-		
 
 		_.each(res.totalsForAllResults, function(value, key) {
 			console.log("Total " +key.replace(/ga\:/gi, "") + ": " + value);
