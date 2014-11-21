@@ -6,6 +6,10 @@
   "bin": {
     "ga-analytics": "bin/ga-analytics"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sfarthin/ga-analytics.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
