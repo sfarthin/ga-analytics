@@ -3,12 +3,12 @@ ga-analytics
 
 Direct access to your Google Analytics reports on the [command-line](https://github.com/sfarthin/ga-analytics#command-line) and within  [node](https://github.com/sfarthin/ga-analytics#node-module).
 
-To use the module you will need a Google Service Account (and connected to Google Analytics) with these pieces of information (screenshots are given to show where they can be found)
+To use the module you will need a Google Service Account (and connected to Google Analytics) with these pieces of information.
 
-- [Google Client id](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/service-account.jpg)
-- [Google Services Email](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/service-account.jpg)
+- [Google Client id](https://console.developers.google.com/) ([screenshot](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/service-account.jpg))
+- [Google Services Email](https://console.developers.google.com/) ([screenshot](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/service-account.jpg))
 - Google Service Account private key (path to .pem file)
-- [Google Analytics table/view](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/tableid.png)
+- [Google Analytics table/view](https://www.google.com/analytics/) ([screenshot](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/tableid.png))
 
 See Google's [Dimensions & Metrics Reference](https://developers.google.com/analytics/devguides/reporting/core/dimsmets) and take a look at some of the examples below to get started.
 
