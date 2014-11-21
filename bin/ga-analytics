@@ -42,8 +42,8 @@ program
 
 gaAnalytics(program, function(err, res) {
 	if(err) {
-		console.log("\n  "+err.message);
-		console.log("\n  More Help: ga-analytics --help\n")
+		console.log("  "+err.message);
+		console.log("\n More Help: ga-analytics --help\n")
 		return;
 	}
 	
@@ -57,9 +57,11 @@ gaAnalytics(program, function(err, res) {
 			})
 		});
 		
-		res.rows.forEach(function(row) {
-			table.push(row);
-		});
+		if(res.rows) {
+			res.rows.forEach(function(row) {
+				table.push(row);
+			});	
+		}
 		
 		console.log(table.toString() + "\n");
 
