@@ -1,14 +1,14 @@
 ga-analytics
 ============
 
-This node module allows direct access to your Google Analytics info once you setup Google Analytics with a Google Service Account.
+This node module allows direct access to your Google Analytics reports.
 
-To use the module you will need these pieces of information (screenshots are given to show where they can be found)
+To use the module you will need a Google Service Account with these pieces of information (screenshots are given to show where they can be found)
 
-- Google Client id
-- Google Services Email
-- Google Service Account private key
-- Google Analytics table/view
+- [Google Client id](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/service-account.jpg)
+- [Google Services Email](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/service-account.jpg)
+- Google Service Account private key (path to .pem file)
+- [Google Analytics table/view](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/tableid.png)
 
 See Google's [Dimensions & Metrics Reference](https://developers.google.com/analytics/devguides/reporting/core/dimsmets) and take a look at some of the examples below to get started.
 
@@ -35,7 +35,7 @@ The password is always "notasecret"
 ### Authorize your service account for Google Analytics
 
 1. Access Google Analytics and click Admin
-2. Click on "User Management", add your google service email with read permissions
+2. Click on "User Management", [add your google service email with read permissions](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/analytics.png)
 
 ## Command-Line
 
