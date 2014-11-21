@@ -1,6 +1,6 @@
 {
   "name": "ga-analytics",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Straight forward access to Google Analytics stats",
   "main": "module.js",
   "bin": {
@@ -27,6 +27,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.5.0",
+    "googleapis": "^1.0.21",
     "lodash": "^2.4.1",
     "moment": "^2.8.4"
   }
