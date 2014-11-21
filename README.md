@@ -1,9 +1,9 @@
 ga-analytics
 ============
 
-This node module allows direct access to your Google Analytics reports.
+Direct access to your Google Analytics reports on the [command-line](https://github.com/sfarthin/ga-analytics#command-line) and within  [node](https://github.com/sfarthin/ga-analytics#node-module).
 
-To use the module you will need a Google Service Account with these pieces of information (screenshots are given to show where they can be found)
+To use the module you will need a Google Service Account (and connected to Google Analytics) with these pieces of information (screenshots are given to show where they can be found)
 
 - [Google Client id](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/service-account.jpg)
 - [Google Services Email](https://raw.githubusercontent.com/sfarthin/ga-analytics/master/service-account.jpg)
@@ -157,11 +157,15 @@ The password is always "notasecret"
 
 ## Node Module
 
-    var pullAnalytics = require("ga-analytics");
+    var gaAnalytics = require("ga-analytics");
 
-    pullAnalytics({
-	    metrics: "ga:users"
+    gaAnalytics({
+        metrics: "ga:users",
+        clientId: "******.apps.googleusercontent.com",
+	serviceEmail: "*****@developer.gserviceaccount.com",
+	key: "/path/to/google-services.pem",
+	ids: "ga:12345678"
     }, function(err, res) {	
-	    if(err) throw err;
-	    console.log(res);
+        if(err) throw err;
+        console.log(res);
     });
