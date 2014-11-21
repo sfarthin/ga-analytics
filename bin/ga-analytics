@@ -2,13 +2,12 @@
 
 var fs = require("fs");
 
-var package_json = JSON.parse(fs.readFileSync("../package.json")),
-	program = require('commander'),
+var program = require('commander'),
 	_ = require("lodash"),
 	gaAnalytics = require("../module.js");
 
 program
-	.version(package_json.version)
+	.version(require('../package.json').version)
 
 	.option('--client-id [clientid]', 'OAuth client id. Can be omitted if the GOOGLEAPI_CLIENTID environment variable is set.')
 	.option('--service-email [email]', 'Google Service Account Email. Can be omitted if the GOOGLEAPI_EMAIL environment variable is set.')

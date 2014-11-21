@@ -1,6 +1,6 @@
 {
   "name": "ga-analytics",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Straight forward access to Google Analytics stats",
   "main": "module.js",
   "bin": {
