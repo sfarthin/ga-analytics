@@ -2,7 +2,7 @@
 
 var fs = require("fs");
 
-var package_json = JSON.parse(fs.readFileSync("./package.json")),
+var package_json = JSON.parse(fs.readFileSync("../package.json")),
 	program = require('commander'),
 	_ = require("lodash"),
 	gaAnalytics = require("../module.js");
