@@ -162,9 +162,9 @@ The password is always "notasecret"
     gaAnalytics({
         metrics: "ga:users",
         clientId: "******.apps.googleusercontent.com",
-	serviceEmail: "*****@developer.gserviceaccount.com",
-	key: "/path/to/google-services.pem",
-	ids: "ga:12345678"
+        serviceEmail: "*****@developer.gserviceaccount.com",
+        key: "/path/to/google-services.pem",
+        ids: "ga:12345678"
     }, function(err, res) {	
         if(err) throw err;
         console.log(res);
