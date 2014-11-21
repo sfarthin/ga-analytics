@@ -12,6 +12,18 @@ To use the module you will need a Google Service Account with these pieces of in
 
 See Google's [Dimensions & Metrics Reference](https://developers.google.com/analytics/devguides/reporting/core/dimsmets) and take a look at some of the examples below to get started.
 
+    $ ga-analytics -m ga:users,ga:sessions -d ga:pagePath,ga:pageTitle
+    ┌────────────────────────────┬─────────────────────────────────────────┬─────────────────┬────────────────────┐
+    │ pagePath (STRING)          │ pageTitle (STRING)                      │ users (INTEGER) │ sessions (INTEGER) │
+    ├────────────────────────────┼─────────────────────────────────────────┼─────────────────┼────────────────────┤
+    │ /                          │ My Main Page                            │ 35              │ 60                 │
+    ├────────────────────────────┼─────────────────────────────────────────┼─────────────────┼────────────────────┤
+    │ /internal-page/            │ My internal Page                        │ 12              │ 1                  │
+    └────────────────────────────┴─────────────────────────────────────────┴─────────────────┴────────────────────┘
+    Total users: 47
+    Total sessions: 61
+
+
 ## Setup
 
 This module requires a Google Service Account connected to your GA account.
