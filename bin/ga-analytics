@@ -4,7 +4,8 @@ var fs = require("fs");
 
 var program = require('commander'),
 	_ = require("lodash"),
-	gaAnalytics = require("../module.js");
+	gaAnalytics = require("../module.js"),
+	Table = require('cli-table');
 
 program
 	.version(require('../package.json').version)
@@ -16,32 +17,57 @@ program
 	.option('--ids [ids]', 'Google Analytics view (profile). Can be omitted if the GOOGLEAPI_ANALYTICS_TABLE environment variable is set.')
 	.option('-s, --start-date [start-date]', 'Start Date (2010-01-01). Defaults to one month ago')
 	.option('-e, --end-date [end_date]', 'End Date (2010-01-15). Defaults to one month after start date.')
-	.option('-m, --metrics [metric]', 'Metric (gs:sessions)', 'ga:sessions')
+	.option('-m, --metrics [metric]', 'Metric, gs:sessions by default', 'ga:sessions')
 	.option('-d, --dimensions [dimension]', 'Dimension (ga:source,ga:keyword)')
 	.option('-s, --sort [sort]', 'Sort (-ga:sessions,source)')
 	.option('-f, --filter [filter]', 'Filter (ga:medium==organic)')
 	.option('--max [num]', 'Define the max amount of results')
-	.option('--verbose', 'Show entire JSON output rather than formatted results.')
+	.option('--json', 'Show entire JSON output rather than formatted results.')
 
 	.on('--help', function(){
-		console.log('  Examples:');
+		console.log('  Example:');
 		console.log('');
-		console.log('    $ ga-reporting --ids ga:93873080 -m ga:sessions,ga:users');
-		console.log('    $ custom-help -h');
-		console.log('');
-	})
-	
+		console.log('    $ ga-analytics -m ga:users,ga:sessions -d ga:pagePath,ga:pageTitle');
+		console.log('    ┌────────────────────────────┬─────────────────────────────────────────┬─────────────────┬────────────────────┐\n'+
+					'    │ pagePath (STRING)          │ pageTitle (STRING)                      │ users (INTEGER) │ sessions (INTEGER) │\n'+
+					'    ├────────────────────────────┼─────────────────────────────────────────┼─────────────────┼────────────────────┤\n'+
+					'    │ /                          │ My Main Page                            │ 35              │ 60                 │\n'+
+					'    ├────────────────────────────┼─────────────────────────────────────────┼─────────────────┼────────────────────┤\n'+
+					'    │ /internal-page/            │ My internal Page                        │ 12              │ 1                  │\n'+
+					'    └────────────────────────────┴─────────────────────────────────────────┴─────────────────┴────────────────────┘'+
+					'\n    Total users: 47\n    Total sessions: 61\n');
+	})	
 	.parse(process.argv)
 
 gaAnalytics(program, function(err, res) {
-	if(err) throw err;
+	if(err) {
+		console.log("\n\n  "+err.message+"\n");
+		program.outputHelp();
+		return;
+	}
 	
-	if(program.verbose) {
+	if(program.json) {
 		console.log(res);
 	} else {
-		_.each(res.totalsForAllResults, function(value, key) {
-			console.log(key.replace(/ga\:/gi, "") + ": " + value);
-			
+		
+		var table = new Table({
+			head: _.map(res.columnHeaders, function(columnHeader) { 
+				return columnHeader.name.replace(/ga\:/,"") + " ("+columnHeader.dataType+")"
+			})
 		});
+		
+		res.rows.forEach(function(row) {
+			table.push(row);
+		});
+		
+		
+		console.log(table.toString() + "\n");
+		
+
+		_.each(res.totalsForAllResults, function(value, key) {
+			console.log("Total " +key.replace(/ga\:/gi, "") + ": " + value);
+		});
+		
+		
 	}	
 })
